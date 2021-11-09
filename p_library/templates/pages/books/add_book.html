@@ -1,0 +1,12 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+    <h3 class="mb-4">Add a new Book</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn m-3 btn-success" type="submit" value="Save Book">
+    </form>
+
+{% endblock %}

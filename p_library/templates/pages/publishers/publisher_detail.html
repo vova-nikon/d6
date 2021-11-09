@@ -1,0 +1,17 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+    <h1>{{ publisher.name }}</h1>
+    <ul>
+        {% for book in publisher.books.all %}
+        <li><a href="/book/{{ book.id }}/">{{ book }}</a></li>
+        {% endfor %}
+    </ul>
+    
+
+    <a href="update/"><button class="btn btn-primary m-3" type="submit">Update</button></a>
+    <a href="delete/"><button class="btn btn-danger m-3" type="submit">Delete</button></a>
+{% endblock %}
+
+
+

@@ -1,0 +1,12 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<h3 class="mb-3">Here is the list of all the publishers in my library:</h3>
+
+    <ul class="list">
+        {% for publisher in publishers %}
+        <li class="m-3"><a href="/publisher/{{ publisher.id }}/">{{ publisher.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

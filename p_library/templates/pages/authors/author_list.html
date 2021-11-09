@@ -1,0 +1,20 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<h3 class="mb-3">Here is the list of all the authors in my library:</h3>
+
+<table class="table table-bordered table-striped table-dark">
+	<tr id="table_head">
+		<td>Picture</td>
+		<td>Name</td>
+	</tr>
+	{% for author in authors %}	
+		<tr>
+			<td><a href="/author/{{ author.id }}/""><img class="img-thumbnail rounded" src="../../../../static/img/{{ author.image }}" alt=""></a></td>
+			<td><a href="/author/{{ author.id }}/">{{ author.full_name }}</a></td>
+		</tr>
+	{% endfor %}
+</table>
+{% endblock %}
+    

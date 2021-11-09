@@ -1,0 +1,14 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<h2 class="text-danger m-3">Are you sure you want to delete the author {{ author.full_name }}?</h2>
+<h1 class="text-danger m-3">All the books written by {{ author.full_name }} will also be removed from the Library</h1>
+<h2 class="text-danger m-3 text-uppercase">This action cannot be undone</h2> <br>
+
+<a href="../"><button class="btn btn-success">No, leave the author in the Library</button></a><br>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger m-3" value="Yes, delete {{ author.full_name}} and all their books from the Library">
+</form>
+{% endblock %}

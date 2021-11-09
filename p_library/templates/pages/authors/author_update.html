@@ -1,0 +1,11 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <h3>{{ author.full_name }}</h3>
+    <img class="img-thumbnail rounded m-3" src="../../../static/img/{{ author.image }}" alt="">
+    {{ form.as_p }}
+    <input class="btn btn-success m-3" type="submit" value="Save">
+</form>
+{% endblock %}

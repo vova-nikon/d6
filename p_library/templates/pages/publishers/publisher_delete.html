@@ -1,0 +1,15 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<h2 class="text-danger m-3">Are you sure you want to delete the publisher {{ publisher.name }}?</h2>
+<h1 class="text-danger m-3">All the books published by {{ publisher.name }} will also be removed from the Library</h1>
+<h2 class="text-danger m-3 text-uppercase">This action cannot be undone</h2> <br>
+
+<a href="/publisher_list/"><button class="btn btn-success">No, leave the publisher in the Library</button></a><br>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger m-3" value="Yes, delete {{ publisher.name }} and all the books published by it from the Library">
+</form>
+
+{% endblock %}

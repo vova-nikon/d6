@@ -1,0 +1,28 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<h3 class="mb-3">Here is the list of all the books in my library:</h3>
+
+<table class="table table-bordered table-responsive table-sm table-striped table-dark">
+	<tr id="table_head">
+		<td>No.</td>
+		<td>Cover</td>
+		<td>Title</td>
+		<td>Written In</td>
+		<td>Author</td>
+	</tr>
+	{% for book in books %}	
+		<tr>
+			<td>{{ forloop.counter }}</td>
+			<td><a href="/book/{{ book.id }}/""><img class="img-thumbnail rounded" src="../../../static/img/books/{{ book.image }}" alt=""></a></td>
+			<td><a href="/book/{{ book.id }}/">{{ book.title }}</a></td>
+			<td>{{ book.year_release }}</td>
+			<td><a href="/author/{{ book.author.id }}">{{ book.author.full_name }}</a></td>
+		</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

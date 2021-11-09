@@ -1,0 +1,15 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+<h2 class="text-danger m-3">Are you sure you want to delete the book "{{ book.title }}" from the Library?</h2>
+<h1 class="text-danger m-3 text-uppercase">This action cannot be undone!</h1> <br>
+
+<a href="../"><button class="btn btn-success">No, leave the book in the Library</button></a><br>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn m-3 btn-danger" value="Yes, delete {{ book.title}} from the Library">
+</form>
+
+
+{% endblock %}
