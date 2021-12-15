@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Multiple Authors</title>
+    <title>Log in</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <h3><a href="../github_login/">GitHub LogIn</a></h3>
+    <form method="post">
         {% csrf_token %}
-        {{ author_formset.management_form }}
-        {% for form in author_formset %}
         {{ form.as_ul }}
-
-        <br>
-        {% endfor %}
-        <input type="submit" value="Save">
+        <input type="submit" value="Log in">
     </form>
 </body>
 </html>
